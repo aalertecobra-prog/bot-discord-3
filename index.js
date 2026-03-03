@@ -1,9 +1,10 @@
+// index.js - prêt pour Render
 import Discord, { EmbedBuilder } from "discord.js";
 import { GiveawaysManager } from "discord-giveaways";
 
-// Variables d'environnement
-const token = process.env.TOKEN; // Ton token Discord
-const color = process.env.COLOR || "#5865F2"; // Couleur par défaut si non définie
+// Récupère les variables d'environnement
+const token = process.env.TOKEN;             // Ton token Discord
+const color = process.env.COLOR || "#5865F2"; // Couleur par défaut
 
 // Crée le bot
 const bot = new Discord.Client({
@@ -30,7 +31,7 @@ bot.login(token)
         console.log(`[Invite] https://discord.com/oauth2/authorize?client_id=${bot.user.id}&permissions=8&integration_type=0&scope=bot`);
         console.log(`[Support] https://dsc.gg/4wip`);
     })
-    .catch((e) => {
+    .catch(() => {
         console.log('\x1b[31m[!] — Please configure a valid bot token or allow all the intents\x1b[0m');
     });
 
